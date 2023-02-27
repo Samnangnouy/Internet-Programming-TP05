@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 80%;
+    height: 99vh;
+    border: 2px solid black;
+    margin: auto;
+}
+.emoji{
+    margin-top: 30px;
+    font-size: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.contain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.title{
+    margin-bottom: 20px;
+    font-family: 'Shantell Sans' , sans-serif;
+}
+.head{
+    width: 400px;
+    margin-bottom: 15px;
+}
+.head select{
+    width: 100%;
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid none;
+    outline: none;
+}
+
+#wrapper{
+    width: 95%;
+    height: 50vh;
+    /* background-color: rgb(95, 156, 156); */
+    margin: auto;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+#school{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 16rem;
+    height: 4rem;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    margin: 10px;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.card .name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.card .domain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.card .web{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(97, 97, 184);
+}
+.card .web i{
+    margin-right: 6px;
+    color: rgb(93, 93, 182);
+}
+.load{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-size: 26px;
+    color: #222;
+}

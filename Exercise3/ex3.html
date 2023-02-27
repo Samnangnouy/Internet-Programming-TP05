@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400;600;700&family=Josefin+Sans&family=Shantell+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ex3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🌏</div>
+        <div class="contain">
+            <h1 class="title">I Know your <span>Home</span></h1>
+            <div class="head">
+                <input type="text" id="name" placeholder="Tell me your name">
+                <button type="button" class="btn" onclick="fetchNewActivity()">Guess</button>
+            </div>
+        </div>
+        <div id="wrapper"></div>
+    </div>
+    <script>
+        const activityNameEle = document.getElementById("wrapper");
+        const getName = document.getElementById("name");
+        function fetchNewActivity(){
+            activityNameEle.innerHTML = `
+            <div class="load">Loading.....</div>
+            `;
+           fetch(`https://api.nationalize.io/?name=${getName.value}`).then(async(res)=>{
+                let data = await res.json();
+                console.log(data);
+                let obj = data.country;
+                activityNameEle.innerHTML = "";
+                for(let n of obj){
+                    activityNameEle.innerHTML += `
+                    <div class="box-info">
+                        <p class="country-name">${n.country_id}</p>
+                        <p class="probab-country">${(n.probability*100).toPrecision(2)}%</p>
+                    </div>
+                    `
+                }
+           });
+        }
+    </script>
+</body>
+</html>
